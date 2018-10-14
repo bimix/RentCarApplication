@@ -104,6 +104,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\CarsControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
     <Compile Include="Controllers\ValuesControllerTest.cs" />
@@ -115,6 +116,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CarDataAccess\CarDataAccess.csproj">
+      <Project>{701c64a9-b300-4d4d-9fa2-d061aeaa1523}</Project>
+      <Name>CarDataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RentCarApplication\RentCarApplication.csproj">
       <Project>{CC3D27DA-0531-409D-9345-DE7437AAE8F8}</Project>
       <Name>RentCarApplication</Name>
