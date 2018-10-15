@@ -20,7 +20,7 @@ namespace RentCarApplication.Controllers
 
 
 
-        public HttpResponseMessage Get(int id)
+        public HttpResponseMessage GetbyId(int id)
         {
             using (BookCarDBEntities entities = new BookCarDBEntities())
             {
@@ -88,10 +88,7 @@ namespace RentCarApplication.Controllers
             }
         }
 
-        public HttpResponseMessage Get(object p)
-        {
-            throw new NotImplementedException();
-        }
+      
 
         public HttpResponseMessage Put (int id, [FromBody] Car car)
         {

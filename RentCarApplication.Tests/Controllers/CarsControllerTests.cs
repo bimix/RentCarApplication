@@ -59,7 +59,7 @@ namespace RentCarApplication.Controllers.Tests
                 }
             };
 
-            var response = controller.Get(2);
+            var response = controller.GetbyId(2);
 
             Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
             var car = response.Content.ReadAsAsync<Car>().Result;
@@ -81,11 +81,51 @@ namespace RentCarApplication.Controllers.Tests
                 }
             };
 
-            var response = controller.Get(111);
+            var response = controller.GetbyId(111);
 
             Assert.AreEqual(HttpStatusCode.NotFound, response.StatusCode);
 
         }
+
+
+
+        
+        [TestMethod]
+        public void DeleteMethodTest()
+        {
+            var httpconfiguration = new HttpConfiguration();
+            WebApiConfig.Register(httpconfiguration);
+            var httpRouteData = new HttpRouteData(httpconfiguration.Routes["DefaultApi"],
+                new HttpRouteValueDictionary
+                {
+                    { "controller", "Cars" }
+                });
+            var controller = new CarsController()
+            {
+                Request = new HttpRequestMessage(HttpMethod.Delete, "http://localhost:6664/api/cars")
+                {
+                    Properties =
+                    {
+                        {
+                            HttpPropertyKeys.HttpConfigurationKey,httpconfiguration
+                        },
+                        {
+                            HttpPropertyKeys.HttpRouteDataKey, httpRouteData
+                        },
+
+                    }
+                }
+            };
+            var response = controller.Delete(0);
+
+        
+
+            Assert.AreEqual(HttpStatusCode.OK, response.StatusCode); // if it finds a car with that id then it deletes and compares status code which is 
+                                                                     //OK with the returned status code which should be OK since it has deleted it succesfully
+          
+
+        }
+
 
 
 
@@ -142,12 +182,28 @@ namespace RentCarApplication.Controllers.Tests
         public void GetCarNotFound()
         {
             var controller = new CarsController();
-            HttpResponseMessage actionResult = controller.Get(2);
+            HttpResponseMessage actionResult = controller.GetbyId(4);
 
             Assert.IsInstanceOfType(actionResult, typeof(NotFoundResult));
         }
 
-
+        [TestMethod] //Another way of testing the NotFound exceptions
+        [ExpectedException(typeof(HttpResponseException))]
+        public void Controller_throws()
+        {
+            try
+            {
+                var sut = new CarsController();
+                sut.GetbyId(4);
+            }
+            catch(HttpResponseException ex)
+            {
+                Assert.AreEqual(ex.Response.StatusCode,
+                    HttpStatusCode.BadRequest,
+                    "Wrong response type");
+                throw;
+            }
+        }
 
         [TestMethod]
         public void PutTest()
