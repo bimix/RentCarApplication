@@ -42,7 +42,7 @@ namespace RentCarApplication.Controllers.Tests
 
             var cars = controller.Get();
 
-            Assert.AreEqual(8, cars.Count());
+            Assert.AreEqual(6, cars.Count());
         }
 
 
@@ -59,16 +59,16 @@ namespace RentCarApplication.Controllers.Tests
                 }
             };
 
-            var response = controller.GetbyId(2);
+            var response = controller.GetbyId(5);
 
             Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
             var car = response.Content.ReadAsAsync<Car>().Result;
-            Assert.AreEqual(2, car.Id);
+            Assert.AreEqual(5, car.Id);
         }
 
 
         [TestMethod()]
-        public void GettingaCarWithUnknownID()
+        public void GettingaCarWithUnknownID() //This one is failing 
         {
             var controller = new CarsController()
             {
@@ -81,13 +81,14 @@ namespace RentCarApplication.Controllers.Tests
                 }
             };
 
-            var response = controller.GetbyId(111);
+            var response = controller.GetbyId(19);
 
             Assert.AreEqual(HttpStatusCode.NotFound, response.StatusCode);
-
+            var car = response.Content.ReadAsAsync<Car>().Result;
+            Assert.AreNotEqual(19, car.Id);
         }
 
-
+        
 
         
         [TestMethod]
@@ -116,13 +117,18 @@ namespace RentCarApplication.Controllers.Tests
                     }
                 }
             };
-            var response = controller.Delete(0);
+            
 
-        
+            var response = controller.Delete(22);
+            //var response2 = controller.GetbyId(2);
 
             Assert.AreEqual(HttpStatusCode.OK, response.StatusCode); // if it finds a car with that id then it deletes and compares status code which is 
                                                                      //OK with the returned status code which should be OK since it has deleted it succesfully
-          
+            
+            //var car2 = response.Content.ReadAsAsync<Car>().Result;
+            //var car = response2.Content.ReadAsAsync<Car>().Result;
+            //Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
+            //Assert.AreEqual(HttpStatusCode.NotFound , response2.StatusCode);
 
         }
 
@@ -158,11 +164,11 @@ namespace RentCarApplication.Controllers.Tests
             };
             var response = controller.Post(new Car()
             {
-                Id = 223,
-                model = "Toyosdt",
-                make = "calidfgba",
-                location = "anylocation",
-                price = "4000",
+                Id = 15,
+                model = "trhd",
+                make = "rtd",
+                location = "dddlocation",
+                price = "4400",
                 avaEnd = null,
                 avaStart = null
             });
@@ -182,10 +188,15 @@ namespace RentCarApplication.Controllers.Tests
         public void GetCarNotFound()
         {
             var controller = new CarsController();
-            HttpResponseMessage actionResult = controller.GetbyId(4);
+            HttpResponseMessage actionResult = controller.GetbyId(57);
 
-            Assert.IsInstanceOfType(actionResult, typeof(NotFoundResult));
+            //Assert.IsInstanceOfType(actionResult, typeof(NotFoundResult));
+
+            Assert.AreEqual(HttpStatusCode.NotFound, actionResult.StatusCode);
         }
+
+
+
 
         [TestMethod] //Another way of testing the NotFound exceptions
         [ExpectedException(typeof(HttpResponseException))]
@@ -194,13 +205,12 @@ namespace RentCarApplication.Controllers.Tests
             try
             {
                 var sut = new CarsController();
-                sut.GetbyId(4);
+                sut.GetbyId(19);
             }
             catch(HttpResponseException ex)
             {
                 Assert.AreEqual(ex.Response.StatusCode,
-                    HttpStatusCode.BadRequest,
-                    "Wrong response type");
+                    HttpStatusCode.BadRequest);
                 throw;
             }
         }

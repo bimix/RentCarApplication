@@ -29,7 +29,7 @@ namespace RentCarApplication.Controllers
                 if (entities != null)
                 {
                     return Request.CreateResponse(HttpStatusCode.OK, entity);
-                    
+
                 }
                 else
                 {
@@ -65,7 +65,7 @@ namespace RentCarApplication.Controllers
         {
             try
             {
-          
+
                 using (BookCarDBEntities entities = new BookCarDBEntities())
                 {
                     var entity = entities.Cars.FirstOrDefault(e => e.Id == id);
@@ -88,9 +88,9 @@ namespace RentCarApplication.Controllers
             }
         }
 
-      
 
-        public HttpResponseMessage Put (int id, [FromBody] Car car)
+
+        public HttpResponseMessage Put(int id, [FromBody] Car car)
         {
             using (BookCarDBEntities entities = new BookCarDBEntities())
             {
@@ -121,12 +121,12 @@ namespace RentCarApplication.Controllers
                 {
                     return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
                 }
-                
 
-                
+
+
 
             }
-            
+
         }
     }
 }
