@@ -68,6 +68,7 @@
       <DependentUpon>CarDataModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SHA1.cs" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="CarDataModel.edmx">

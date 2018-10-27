@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CarDataAccess
+namespace RentCarApplication.Models
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class BookCarDBEntities : DbContext
+    public partial class RegistrationEntities : DbContext
     {
-        public BookCarDBEntities()
-            : base("name=BookCarDBEntities")
+        public RegistrationEntities()
+            : base("name=RegistrationEntities")
         {
         }
     
@@ -25,8 +25,6 @@ namespace CarDataAccess
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Car> Cars { get; set; }
-
-        
+        public virtual DbSet<System_Users> System_Users { get; set; }
     }
 }
