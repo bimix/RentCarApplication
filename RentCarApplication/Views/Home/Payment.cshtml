@@ -1,0 +1,52 @@
+﻿@model IEnumerable<CarDataAccess.Car>
+
+@{
+    ViewBag.Title = "PAYMENT";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Payment</title>
+</head>
+<body>
+    <table class="table">
+
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.make)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.avaStart)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.avaEnd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.price)
+            </th>
+            <th>
+
+            </th>
+
+        </tr>
+
+    </table>
+
+
+
+
+
+    @*Html.ActionLink("Rent", "Delete", new { id = item.Id })*@
+
+</body>
+</html>

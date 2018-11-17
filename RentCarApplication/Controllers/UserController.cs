@@ -30,7 +30,7 @@ namespace RentCarApplication.Controllers
                 if (user.IsValid(user.UserName, user.Password))
                 {
                     FormsAuthentication.SetAuthCookie(user.UserName, user.RememberMe);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("ListCars", "Home"); 
                 }
                 else
                 {

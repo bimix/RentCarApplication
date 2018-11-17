@@ -11,6 +11,13 @@ namespace RentCarApplication
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
+
+            routes.MapRoute("Payment", "api/cars/{id}",
+    new { controller = "HomeController", action = "payment", id = UrlParameter.Optional });
+
+
+
+
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
