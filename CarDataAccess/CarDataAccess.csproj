@@ -49,6 +49,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Booking.cs">
+      <DependentUpon>CarDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Car.cs">
       <DependentUpon>CarDataModel.tt</DependentUpon>
     </Compile>

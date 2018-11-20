@@ -55,18 +55,37 @@ namespace RentCarApplication.Controllers
                 }
 
             }
+
             catch (Exception ex)
             {
                 return View(ex + "error");
             }
+
         }
 
-        public ActionResult Payment(int id)
-        {
 
-            //return RedirectToAction("Action", new { carId = id });
-          
-            return View("Payment");
-        }
+
+        //public ActionResult Payment(Booking book)
+        //{
+        //    try
+        //    {
+        //        using (BookCarDBEntities entities = new BookCarDBEntities())
+        //        {
+        //            entities.Bookings.Add(book);
+        //            entities.SaveChanges();
+        //        }
+        //        return View("Payment");
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return View(ex + "something happened: Error");
+        //    }
+
+        //    //return RedirectToAction("Action", new { carId = id });
+
+        //    //return View("Payment");
+        //}
+
+
     }
 }

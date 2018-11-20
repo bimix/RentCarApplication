@@ -1,7 +1,5 @@
 ﻿@model IEnumerable<CarDataAccess.Car>
 
-
-
 @{
     ViewBag.Title = "List";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -13,6 +11,9 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>ListCars</title>
+    <script src="~/Scripts/OnClick.js">
+
+    </script>
 </head>
 <body>
     @*<p>
@@ -21,9 +22,8 @@
 
 
 
-
-
     <table class="table">
+
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.model)
@@ -94,16 +94,9 @@
 
             </tr>
 
-
-
-
         }
 
     </table>
-
-  
-
-
 
 
 
