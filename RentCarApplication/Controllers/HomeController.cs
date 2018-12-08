@@ -34,58 +34,75 @@ namespace RentCarApplication.Controllers
         }
 
 
-        public ActionResult Delete(int id)
-        {
-            try
-            {
+        //public ActionResult Delete(int id)
+        //{
+        //    try
+        //    {
 
-                using (BookCarDBEntities entities = new BookCarDBEntities())
+        //        using (BookCarDBEntities entities = new BookCarDBEntities())
+        //        {
+        //            var entity = entities.Cars.FirstOrDefault(e => e.Id == id);
+        //            if (entity == null)
+        //            {
+        //                return View("not found");
+        //            }
+        //            else
+        //            {
+        //                entities.Cars.Remove(entity);
+        //                entities.SaveChanges();
+        //                return View("success");
+        //            }
+        //        }
+
+        //    }
+
+        //    catch (Exception ex)
+        //    {
+        //        return View(ex + "error");
+        //    }
+
+        //}
+
+
+       
+        public ActionResult Payment(int id)
+        {
+            //try
+            //{
+            //    using (BookCarDBEntities entities = new BookCarDBEntities())
+            //    {
+            //        entities.Bookings.Add(book);
+            //        entities.SaveChanges();
+            //    }
+            //    return View("Payment");
+            //}
+            //catch (Exception ex)
+            //{
+            //    return View(ex + "something happened: Error");
+            //}
+
+            //return RedirectToAction("Action", new { carId = id });
+
+            using (BookCarDBEntities entities = new BookCarDBEntities())
+            {
+                var entity = entities.Cars.FirstOrDefault(c => c.Id == id);
+
+                if (entities != null)
                 {
-                    var entity = entities.Cars.FirstOrDefault(e => e.Id == id);
-                    if (entity == null)
-                    {
-                        return View("not found");
-                    }
-                    else
-                    {
-                        entities.Cars.Remove(entity);
-                        entities.SaveChanges();
-                        return View("success");
-                    }
+                    return View(entity);
+                }
+                else
+                {
+                    return View("Not Found");
                 }
 
             }
 
-            catch (Exception ex)
-            {
-                return View(ex + "error");
-            }
+
+
+
+
 
         }
-
-
-
-        //public ActionResult Payment(Booking book)
-        //{
-        //    try
-        //    {
-        //        using (BookCarDBEntities entities = new BookCarDBEntities())
-        //        {
-        //            entities.Bookings.Add(book);
-        //            entities.SaveChanges();
-        //        }
-        //        return View("Payment");
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return View(ex + "something happened: Error");
-        //    }
-
-        //    //return RedirectToAction("Action", new { carId = id });
-
-        //    //return View("Payment");
-        //}
-
-
     }
 }

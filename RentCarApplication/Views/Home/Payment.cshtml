@@ -1,7 +1,10 @@
 ﻿@model IEnumerable<CarDataAccess.Car>
 
+
 @{
-    ViewBag.Title = "PAYMENT";
+    /**/
+
+    ViewBag.Title = "Payment";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -11,6 +14,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Payment</title>
+
 </head>
 <body>
     <table class="paymenttable">
@@ -37,7 +41,30 @@
             </th>
 
         </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
 
+                <td>
+                    @Html.DisplayFor(modelItem => item.model)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.make)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.location)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.avaStart)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.avaEnd)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.price)
+                </td>
+            </tr>
+        }
     </table>
 
     @*Html.ActionLink("Rent", "Delete", new { id = item.Id })*@
