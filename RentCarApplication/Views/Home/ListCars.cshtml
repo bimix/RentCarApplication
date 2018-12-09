@@ -75,7 +75,7 @@
 
                 <td>
 
-                <td>@Html.ActionLink("Rent", "Payment", new { id = item.Id })</td>
+                <td>@Html.ActionLink("Rent", "Payment", new { id = item.Id, model = item.model, make = item.make, price = item.price, avastr= item.avaStart, avend=item.avaEnd, locst = item.location })</td>
                 
                 @*<div>
                         <a href="http://localhost:6664/Home/Payment">Pay</a>

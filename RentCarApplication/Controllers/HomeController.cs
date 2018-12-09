@@ -16,7 +16,7 @@ namespace RentCarApplication.Controllers
 {
     public class HomeController : Controller
     {
-        BookCarDBEntities db = new BookCarDBEntities();
+        
         public ActionResult Index(int? id)
         {
 
@@ -28,8 +28,11 @@ namespace RentCarApplication.Controllers
         public ActionResult ListCars()
         {
             string username = User.Identity.Name;
-            var cars = db.Cars.ToList();
-
+            var cars = new List<CarDataAccess.Car>();
+            using (var db = new BookCarDBEntities())
+            {
+                cars = db.Cars.ToList();
+            }
             return View(cars);
         }
 
@@ -64,30 +67,15 @@ namespace RentCarApplication.Controllers
         //}
 
 
-       
+
         public ActionResult Payment(int id)
         {
-            //try
-            //{
-            //    using (BookCarDBEntities entities = new BookCarDBEntities())
-            //    {
-            //        entities.Bookings.Add(book);
-            //        entities.SaveChanges();
-            //    }
-            //    return View("Payment");
-            //}
-            //catch (Exception ex)
-            //{
-            //    return View(ex + "something happened: Error");
-            //}
-
-            //return RedirectToAction("Action", new { carId = id });
 
             using (BookCarDBEntities entities = new BookCarDBEntities())
             {
                 var entity = entities.Cars.FirstOrDefault(c => c.Id == id);
 
-                if (entities != null)
+                if (entity != null)
                 {
                     return View(entity);
                 }
@@ -95,14 +83,7 @@ namespace RentCarApplication.Controllers
                 {
                     return View("Not Found");
                 }
-
             }
-
-
-
-
-
-
         }
     }
 }
