@@ -27,5 +27,6 @@ namespace CarDataAccess
     
         public virtual DbSet<Car> Cars { get; set; }
         public virtual DbSet<Booking> Bookings { get; set; }
+        
     }
 }

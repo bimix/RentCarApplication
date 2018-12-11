@@ -8,7 +8,7 @@ namespace RentCarApplication.Models
 {
     public class HomeModel: HomeController
     {
-        public string Data { get; set; }
-        public List<string> Datas { get; set; }
+        //public string Data { get; set; }
+        //public List<string> Datas { get; set; }
     }
 }

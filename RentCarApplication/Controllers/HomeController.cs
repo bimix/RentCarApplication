@@ -37,10 +37,21 @@ namespace RentCarApplication.Controllers
         }
 
 
+        public ActionResult ListBookings()
+        {
+            string username = User.Identity.Name;
+            var bookings = new List<CarDataAccess.Booking>();
+            using (var db = new BookCarDBEntities())
+            {
+                bookings = db.Bookings.ToList();
+            }
+            return View(bookings);
+        }
 
+        
+         
 
-
-        public ActionResult Delete(int id, Car car)
+        public ActionResult Pay(int id, Car car)
         {
             try
             {
@@ -57,7 +68,8 @@ namespace RentCarApplication.Controllers
 
                     db.SaveChanges();
 
-                    return View(book);
+                    
+                    return RedirectToAction("ListBookings", "Home");
                 }
 
             }

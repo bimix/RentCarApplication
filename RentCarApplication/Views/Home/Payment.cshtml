@@ -10,22 +10,79 @@
 <!DOCTYPE html>
 
 <html>
+
 <head>
+    
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+            border-spacing: 3px;
+        }
+    </style>
+
+
     <meta name="viewport" content="width=device-width" />
     <title>Payment</title>
 
 </head>
 <body>
-    @* access model properties here *@
-    <span>@Model.Id</span>
-    <span>@Model.model</span>
-    <span>@Model.make</span>
-    <span>@Model.location</span>
-    <span>@Model.price</span>
-    <span>@Model.avaStart</span>
-    <span>@Model.avaEnd</span>
+    <h2>This is the car you selected, click Pay to make the payment</h2>
+
+    <table>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Model
+            </th>
+            <th>
+                Make
+            </th>
+            <th>
+                Location
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                Available from
+            </th>
+            <th>
+                Avalable until
+            </th>
+        </tr>
 
 
-    @Html.ActionLink("Delete", "Delete", new { id = Model.Id })
+
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.model)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.make)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.location)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.price)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.avaStart)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.avaEnd)
+            </td>
+        </tr>
+    </table>
+
+    @Html.ActionLink("Pay", "Pay", new { id = Model.Id })
+
 </body>
 </html>
