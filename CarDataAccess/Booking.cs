@@ -14,7 +14,7 @@ namespace CarDataAccess
     
     public partial class Booking
     {
-        public int PersonID { get; set; }
+        public int id { get; set; }
         public string Username { get; set; }
         public string model { get; set; }
         public string make { get; set; }

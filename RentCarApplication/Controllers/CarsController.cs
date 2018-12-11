@@ -43,7 +43,6 @@ namespace RentCarApplication.Controllers
         {
             try
             {
-
                 using (BookCarDBEntities entities = new BookCarDBEntities())
                 {
                     entities.Cars.Add(car);
@@ -53,13 +52,13 @@ namespace RentCarApplication.Controllers
                     message.Headers.Location = new Uri(Request.RequestUri + car.Id.ToString());
                     return message;
                 }
-
             }
             catch (Exception ex)
             {
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
             }
         }
+
 
         public HttpResponseMessage Delete(int id)
         {

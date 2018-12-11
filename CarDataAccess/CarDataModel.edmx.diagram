@@ -6,7 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="f7de93ace8344e1dae43239db63ed6a6" Name="Diagram1">
         <EntityTypeShape EntityType="BookCarDBModel.Car" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BookCarDBModel.Booking" Width="1.5" PointX="3.75" PointY="0.625" />
+        <EntityTypeShape EntityType="BookCarDBModel.Booking" Width="1.5" PointX="3.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

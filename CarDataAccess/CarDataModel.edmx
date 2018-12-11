@@ -7,9 +7,9 @@
     <Schema Namespace="BookCarDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Bookings">
           <Key>
-            <PropertyRef Name="PersonID" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="PersonID" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" />
           <Property Name="Username" Type="varchar" MaxLength="50" />
           <Property Name="model" Type="varchar" MaxLength="50" />
           <Property Name="make" Type="varchar" MaxLength="50" />
@@ -56,9 +56,9 @@
         </EntityContainer>
         <EntityType Name="Booking">
           <Key>
-            <PropertyRef Name="PersonID" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="PersonID" Type="Int32" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="model" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="make" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -96,7 +96,7 @@
                 <ScalarProperty Name="make" ColumnName="make" />
                 <ScalarProperty Name="model" ColumnName="model" />
                 <ScalarProperty Name="Username" ColumnName="Username" />
-                <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

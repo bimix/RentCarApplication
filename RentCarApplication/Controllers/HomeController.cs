@@ -16,7 +16,7 @@ namespace RentCarApplication.Controllers
 {
     public class HomeController : Controller
     {
-        
+
         public ActionResult Index(int? id)
         {
 
@@ -37,36 +37,49 @@ namespace RentCarApplication.Controllers
         }
 
 
-        //public ActionResult Delete(int id)
-        //{
-        //    try
-        //    {
-
-        //        using (BookCarDBEntities entities = new BookCarDBEntities())
-        //        {
-        //            var entity = entities.Cars.FirstOrDefault(e => e.Id == id);
-        //            if (entity == null)
-        //            {
-        //                return View("not found");
-        //            }
-        //            else
-        //            {
-        //                entities.Cars.Remove(entity);
-        //                entities.SaveChanges();
-        //                return View("success");
-        //            }
-        //        }
-
-        //    }
-
-        //    catch (Exception ex)
-        //    {
-        //        return View(ex + "error");
-        //    }
-
-        //}
 
 
+
+        public ActionResult Delete(int id, Car car)
+        {
+            try
+            {
+                using (BookCarDBEntities db = new BookCarDBEntities())
+                {
+
+                    var carToDelete = db.Cars.FirstOrDefault(c => c.Id == id);
+                    var book = CreateNewBooking(carToDelete);
+                    db.Bookings.Add(book);
+
+
+
+                    db.Cars.Remove(carToDelete);
+
+                    db.SaveChanges();
+
+                    return View(book);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return View(ex + "error");
+            }
+        }
+
+        private Booking CreateNewBooking(Car car)
+        {
+            var bookingCreated = new Booking
+            {
+                id = car.Id,
+                model = car.model,
+                make = car.make,
+                price = car.price,
+                location = car.location
+            };
+
+            return bookingCreated;
+        }
 
         public ActionResult Payment(int id)
         {
