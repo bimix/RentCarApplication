@@ -88,9 +88,9 @@ namespace RentCarApplication.Controllers.Tests
             Assert.AreNotEqual(19, car.Id);
         }
 
-        
 
-        
+
+
         [TestMethod]
         public void DeleteMethodTest()
         {
@@ -117,14 +117,14 @@ namespace RentCarApplication.Controllers.Tests
                     }
                 }
             };
-            
+
 
             var response = controller.Delete(22);
             //var response2 = controller.GetbyId(2);
 
             Assert.AreEqual(HttpStatusCode.OK, response.StatusCode); // if it finds a car with that id then it deletes and compares status code which is 
                                                                      //OK with the returned status code which should be OK since it has deleted it succesfully
-            
+
             //var car2 = response.Content.ReadAsAsync<Car>().Result;
             //var car = response2.Content.ReadAsAsync<Car>().Result;
             //Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
@@ -207,7 +207,7 @@ namespace RentCarApplication.Controllers.Tests
                 var sut = new CarsController();
                 sut.GetbyId(19);
             }
-            catch(HttpResponseException ex)
+            catch (HttpResponseException ex)
             {
                 Assert.AreEqual(ex.Response.StatusCode,
                     HttpStatusCode.BadRequest);
@@ -235,6 +235,25 @@ namespace RentCarApplication.Controllers.Tests
             Assert.AreEqual("new model", newCar.model);
             Assert.AreEqual("new make", newCar.make);
 
+        }
+
+
+        //Testing getting list of bookings by giving he nr of bookings in the list
+        [TestMethod()]
+        public void ListBookingsTest()
+        {
+            var controller = new CarsController();
+
+            var cars = controller.Get();
+
+            Assert.AreEqual(6, cars.Count());
+
+        }
+
+        [TestMethod()]
+        public void PayTest()
+        {
+            Assert.Fail();
         }
     }
 }

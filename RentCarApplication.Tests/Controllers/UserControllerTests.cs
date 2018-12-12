@@ -21,10 +21,8 @@ namespace RentCarApplication.Controllers.Tests
             
             var user = controller.Login();
 
-
-
-
             Assert.AreEqual(user,"bimix");
+           
         }
     }
 }
