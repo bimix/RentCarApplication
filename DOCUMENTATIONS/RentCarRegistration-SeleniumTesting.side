@@ -1,0 +1,285 @@
+{
+  "id": "a6df603e-04c9-47b8-90c7-53485e327af2",
+  "version": "1.1",
+  "name": "RentCarRegistration",
+  "url": "http://localhost:6664/Home/ListCars",
+  "tests": [{
+    "id": "29a78c78-11b9-43e4-a4ab-0bf77c61fe5b",
+    "name": "Registration and login",
+    "commands": [{
+      "id": "d5214f64-b004-4506-82aa-3532b369b287",
+      "comment": "",
+      "command": "open",
+      "target": "/Register",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "65a420a5-79c6-48f4-bfb2-30db4741f264",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1600x860",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "84d7ece6-fa42-41f5-9f7b-40ea7ecd6eb7",
+      "comment": "",
+      "command": "click",
+      "target": "id=Username",
+      "targets": [
+        ["id=Username", "id"],
+        ["name=Username", "name"],
+        ["css=#Username", "css"],
+        ["css=#Username", "css:finder"],
+        ["xpath=//input[@id='Username']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "eef97a30-eac8-4f8a-9582-52dba883808a",
+      "comment": "",
+      "command": "type",
+      "target": "id=Username",
+      "targets": [
+        ["id=Username", "id"],
+        ["name=Username", "name"],
+        ["css=#Username", "css"],
+        ["css=#Username", "css:finder"],
+        ["xpath=//input[@id='Username']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "john"
+    }, {
+      "id": "0c0d4f24-4ccd-41da-b45b-caf454b0fcb1",
+      "comment": "",
+      "command": "type",
+      "target": "id=Password",
+      "targets": [
+        ["id=Password", "id"],
+        ["name=Password", "name"],
+        ["css=#Password", "css"],
+        ["css=#Password", "css:finder"],
+        ["xpath=//input[@id='Password']", "xpath:attributes"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "john"
+    }, {
+      "id": "54544c6d-e238-4239-a687-9efb3d91865f",
+      "comment": "",
+      "command": "type",
+      "target": "id=Email",
+      "targets": [
+        ["id=Email", "id"],
+        ["name=Email", "name"],
+        ["css=#Email", "css"],
+        ["css=#Email", "css:finder"],
+        ["xpath=//input[@id='Email']", "xpath:attributes"],
+        ["xpath=//div[3]/div/input", "xpath:position"]
+      ],
+      "value": "john@hotmail.com"
+    }, {
+      "id": "de7971ce-c6c7-4595-b732-15912b0d225f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.container > div:nth-child(5)",
+      "targets": [
+        ["css=.container > div:nth-child(5)", "css:finder"],
+        ["xpath=//div[3]/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "02e9f209-a2fa-4b21-aaac-f81dbbd45431",
+      "comment": "",
+      "command": "click",
+      "target": "css=input.btn.btn-default",
+      "targets": [
+        ["css=input.btn.btn-default", "css"],
+        ["css=.btn", "css:finder"],
+        ["xpath=//input[@value='Register']", "xpath:attributes"],
+        ["xpath=//div[4]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cb793c53-9162-45ad-93dd-d2697c81350f",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Login",
+      "targets": [
+        ["linkText=Login", "linkText"],
+        ["css=div:nth-child(5) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Login')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:6664/User/Login']", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9eeabf57-2f1c-4fce-b72d-9f70837ad003",
+      "comment": "",
+      "command": "click",
+      "target": "id=UserName",
+      "targets": [
+        ["id=UserName", "id"],
+        ["name=UserName", "name"],
+        ["css=#UserName", "css"],
+        ["css=#UserName", "css:finder"],
+        ["xpath=//input[@id='UserName']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "402b32c9-4e50-4f54-8758-6bdeb0b2a61a",
+      "comment": "",
+      "command": "type",
+      "target": "id=UserName",
+      "targets": [
+        ["id=UserName", "id"],
+        ["name=UserName", "name"],
+        ["css=#UserName", "css"],
+        ["css=#UserName", "css:finder"],
+        ["xpath=//input[@id='UserName']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "John"
+    }, {
+      "id": "6ab013fe-d27d-4501-977d-4f93ed92204f",
+      "comment": "",
+      "command": "type",
+      "target": "id=Password",
+      "targets": [
+        ["id=Password", "id"],
+        ["name=Password", "name"],
+        ["css=#Password", "css"],
+        ["css=#Password", "css:finder"],
+        ["xpath=//input[@id='Password']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "john"
+    }, {
+      "id": "d8aa0696-2fb7-4d50-b258-1957a39ea412",
+      "comment": "",
+      "command": "click",
+      "target": "css=input[type=\"submit\"]",
+      "targets": [
+        ["css=input[type=\"submit\"]", "css"],
+        ["css=input:nth-child(7)", "css:finder"],
+        ["xpath=//input[@value='Log In']", "xpath:attributes"],
+        ["xpath=//fieldset/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "5c34a977-b19b-4e6a-980f-9012b2cf86bf",
+    "name": "View list of cars and select one",
+    "commands": [{
+      "id": "34384449-327d-4fb6-9694-cd7a48e69cfd",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:6664/Home/ListCars",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "51cca4fd-73fa-48cd-988e-a641c6593bee",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1600x860",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f2add13d-14b5-4772-afa6-f7e51a7cd51d",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(13) a",
+      "targets": [
+        ["css=tr:nth-child(13) a", "css:finder"],
+        ["xpath=(//a[contains(text(),'Rent')])[13]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/Home/Payment/624234?model=Benbz&make=Mercedes&price=200&avastr=05%2F14%2F2018%2000%3A00%3A00&avend=10%2F01%2F2018%2000%3A00%3A00&locst=Copenhagen')]", "xpath:href"],
+        ["xpath=//tr[13]/td[7]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "82a3d20e-11f0-4e3c-a9ce-fdea6b9ea0c7",
+      "comment": "",
+      "command": "click",
+      "target": "css=td:nth-child(4)",
+      "targets": [
+        ["css=td:nth-child(4)", "css:finder"],
+        ["xpath=//td[4]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "6d8a9502-e5ac-4795-aeb2-7b4f0b4a8050",
+    "name": "Renting car and displaying Bookings list",
+    "commands": [{
+      "id": "7c6087bc-0905-4f23-bb23-358ba48e8fba",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:6664/Home/ListCars",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ce390539-1fdf-4009-aa7c-23bdeb7d6b4c",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1600x860",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dab73872-ba51-4ee0-9736-3089b11f44a3",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(14) a",
+      "targets": [
+        ["css=tr:nth-child(14) a", "css:finder"],
+        ["xpath=(//a[contains(text(),'Rent')])[14]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/Home/Payment/890890?model=Bcenz&make=Mercedes&price=200&avastr=05%2F14%2F2018%2000%3A00%3A00&avend=10%2F01%2F2018%2000%3A00%3A00&locst=Copenhagen')]", "xpath:href"],
+        ["xpath=//tr[14]/td[7]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2a6b88d5-7d13-4356-9c09-a26de6a63f54",
+      "comment": "",
+      "command": "click",
+      "target": "css=div.container.body-content",
+      "targets": [
+        ["css=div.container.body-content", "css"],
+        ["css=.body-content", "css:finder"],
+        ["xpath=//div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "687328d0-87e5-4ac9-9f81-00fff81015eb",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Pay",
+      "targets": [
+        ["linkText=Pay", "linkText"],
+        ["css=div.container.body-content > a", "css"],
+        ["css=a:nth-child(6)", "css:finder"],
+        ["xpath=//a[contains(text(),'Pay')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/Home/Pay/890890')]", "xpath:href"],
+        ["xpath=//div[3]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "80eb7467-8f91-411c-8b12-72f8798a6523",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(14) > td:nth-child(5)",
+      "targets": [
+        ["css=tr:nth-child(14) > td:nth-child(5)", "css:finder"],
+        ["xpath=//tr[14]/td[5]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "d345ea22-e880-40f0-9306-707c9761a07e",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["29a78c78-11b9-43e4-a4ab-0bf77c61fe5b"]
+  }],
+  "urls": ["http://localhost:6664/", "http://localhost:6664/Home/ListCars"],
+  "plugins": []
+}
