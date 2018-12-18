@@ -99,7 +99,7 @@ namespace RentCarApplication.Controllers
             using (BookCarDBEntities entities = new BookCarDBEntities())
             {
                 var entity = entities.Cars.FirstOrDefault(c => c.Id == id);
-
+               
                 if (entity != null)
                 {
                     return View(entity);

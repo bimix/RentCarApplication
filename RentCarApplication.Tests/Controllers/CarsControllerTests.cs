@@ -13,6 +13,7 @@ using System.Web.Http.Hosting;
 using System.Net;
 using System.Web.Http.Results;
 using System.Web.Http.Routing;
+using System.Web.Mvc;
 
 namespace RentCarApplication.Controllers.Tests
 {
@@ -238,7 +239,7 @@ namespace RentCarApplication.Controllers.Tests
         }
 
 
-        //Testing getting list of bookings by giving he nr of bookings in the list
+        //Testing getting list of bookings by giving the nr. of bookings in the list
         [TestMethod()]
         public void ListBookingsTest()
         {
@@ -251,9 +252,11 @@ namespace RentCarApplication.Controllers.Tests
         }
 
         [TestMethod()]
-        public void PayTest()
+        public void PayTest() //Testing the Payment method of selecting a row
         {
-            Assert.Fail();
+            HomeController homeController = new HomeController();
+            ActionResult result = homeController.Payment(1);
+            Assert.IsInstanceOfType(result, typeof(ViewResult));
         }
     }
 }
